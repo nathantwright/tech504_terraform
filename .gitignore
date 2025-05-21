@@ -1,7 +1,9 @@
 # Local .terraform directories
+#   WHY IGNORE: will contain provider plugins, backend config and module caches
 .terraform/
 
 # .tfstate files
+#   WHY IGNORE: these could contain credentials
 *.tfstate
 *.tfstate.*
 
@@ -35,3 +37,5 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# DON'T GITIGNORE: .terraform.lock.hcl
