@@ -10,16 +10,16 @@
 # syntax for HCL is {key = value}
 
 provider "aws" {
-  region = "eu-west-1"
+  region = var.app_region
 }
 
 # Terraform changes frequently so the official documentation is good
 
 resource "aws_instance" "app_instance" {
-  ami = "ami-0c1c30571d2dae5c9"
-  instance_type = "t3.micro"
-  associate_public_ip_address = true
+  ami = var.app_ami_id
+  instance_type = var.app_instance_type
+  associate_public_ip_address = var.app_public_ip
   tags = {
-    Name = "tech504-nathan-tf-test-app"
+    Name = var.app_name
   }
 }
